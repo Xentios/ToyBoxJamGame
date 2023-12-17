@@ -1,0 +1,113 @@
+{
+    "name": "Dragon Controls",
+    "maps": [
+        {
+            "name": "Dragon Movement",
+            "id": "f0327f85-a32d-4b85-82cb-7814439cb804",
+            "actions": [
+                {
+                    "name": "Go Right",
+                    "type": "Button",
+                    "id": "b0705f8b-7cfc-41d8-9991-415b6602d1fa",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=1.401298E-45,pressPoint=1.401298E-45)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Go Up",
+                    "type": "Button",
+                    "id": "3d8dec13-b67c-4a88-8f03-19b2c4ac2888",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Go Down",
+                    "type": "Button",
+                    "id": "b03a333f-fc12-4cde-8c46-fefe7c9dc739",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c40030b9-dde5-462e-a7b3-61fba2798b42",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "General Scheme",
+                    "action": "Go Right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d52829d9-ae49-41b2-bbad-3a1ffcf6f5c0",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "General Scheme",
+                    "action": "Go Right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f73c8ae7-6640-4fe1-bd6e-3c141cc3f568",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "General Scheme",
+                    "action": "Go Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3b58aa84-1d86-45df-86eb-3483e7736e7b",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "General Scheme",
+                    "action": "Go Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "584dfcfb-3151-44fa-baad-8fff28b17af7",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "General Scheme",
+                    "action": "Go Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "af0ec3d3-870a-47a7-a3fe-9727d02d33f8",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "General Scheme",
+                    "action": "Go Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "General Scheme",
+            "bindingGroup": "General Scheme",
+            "devices": []
+        }
+    ]
+}

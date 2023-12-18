@@ -8,6 +8,8 @@ public class DragonMovement : MonoBehaviour
     [SerializeField]
     private float speed=10;
 
+    [SerializeField]
+    private Transform dragonPivot;
 
     [SerializeField]
     private InputActionAsset actionsAsset;
@@ -37,14 +39,26 @@ public class DragonMovement : MonoBehaviour
         actionsAsset.Disable();
     }
 
+    private void Update()
+    {
+        if (dragonPivot.rotation != Quaternion.identity)
+        {
+            dragonPivot.rotation = Quaternion.Lerp(dragonPivot.rotation, Quaternion.identity,Time.deltaTime);
+        }
+        
+    }
+
     private void PressUp(InputAction.CallbackContext callbackContext )
     {
         rb2d.AddRelativeForce(Vector2.up * speed);
+       
     }
 
     private void PressDown(InputAction.CallbackContext callbackContext)
     {
         rb2d.AddRelativeForce(Vector2.down*speed);
+        var rotation = dragonPivot.rotation.eulerAngles;
+        dragonPivot.rotation = Quaternion.Euler(rotation.x, rotation.y, rotation.z - 5);// - 10000f * (float) callbackContext.duration);
     }
 
     private void PressRight(InputAction.CallbackContext callbackContext)

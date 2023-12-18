@@ -101,6 +101,56 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Scene Controls",
+            "id": "1ff3dee9-1692-4eb9-b248-6aa2b8b9264c",
+            "actions": [
+                {
+                    "name": "Restart Scene",
+                    "type": "Button",
+                    "id": "0d2ce626-b37b-4f5e-8d5d-8f0c27d829ee",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "One Modifier",
+                    "id": "ad8c493e-1806-4869-8a6d-eec224c7b8f2",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Restart Scene",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "76877d46-9c75-4987-a27e-2bb20f85d571",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Restart Scene",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "dab836c0-243a-4784-a0ac-0391aef648cd",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Restart Scene",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
         }
     ],
     "controlSchemes": [

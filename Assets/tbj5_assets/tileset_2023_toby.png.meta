@@ -3714,7 +3714,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3722,6 +3722,27 @@ TextureImporter:
       bones: []
       spriteID: 852c888f3cd39c8488b193f8308342ea
       internalID: 1484779808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_2023_toby_170
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 48
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 1, y: 1, z: 1, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ff87c77f3989d04f8c68575b86c8b3a
+      internalID: 1531745737
       vertices: []
       indices: 
       edges: []

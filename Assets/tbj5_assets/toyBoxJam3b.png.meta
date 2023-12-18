@@ -1270,7 +1270,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toyBoxJam3b_54
+      name: cloud2
       rect:
         serializedVersion: 2
         x: 96
@@ -1291,7 +1291,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toyBoxJam3b_55
+      name: cloud5
       rect:
         serializedVersion: 2
         x: 120
@@ -1383,7 +1383,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1404,7 +1404,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1425,7 +1425,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1446,7 +1446,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1467,7 +1467,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1858,7 +1858,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toyBoxJam3b_82
+      name: cloud3
       rect:
         serializedVersion: 2
         x: 104
@@ -1879,7 +1879,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toyBoxJam3b_83
+      name: cloud4
       rect:
         serializedVersion: 2
         x: 112
@@ -1900,7 +1900,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toyBoxJam3b_84
+      name: cloud1
       rect:
         serializedVersion: 2
         x: 88
@@ -2958,7 +2958,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2979,7 +2979,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3000,7 +3000,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3021,7 +3021,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3042,7 +3042,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3050,6 +3050,90 @@ TextureImporter:
       bones: []
       spriteID: 3a014f1fea78a4b45b268b491985525a
       internalID: -1717906575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toyBoxJam3b_139
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ce49b45dda43b94090238da46a505ff
+      internalID: 1254224098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toyBoxJam3b_140
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 80
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f24bc998383feed41a8b244538bfa539
+      internalID: -41284530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toyBoxJam3b_141
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 72
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc688820ac740b142b06c026259367da
+      internalID: -1278248850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toyBoxJam3b_142
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 72
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f888c88ad0ef15540acf068aca960490
+      internalID: 1176620146
       vertices: []
       indices: 
       edges: []
@@ -3065,6 +3149,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      cloud1: 1049469676
+      cloud2: -1252974312
+      cloud3: 1580980961
+      cloud4: -333150529
+      cloud5: 787817101
       toyBoxJam3b_0: -385604560
       toyBoxJam3b_1: 43793413
       toyBoxJam3b_10: -734319563
@@ -3110,7 +3199,11 @@ TextureImporter:
       toyBoxJam3b_136: 1855596298
       toyBoxJam3b_137: 1088272779
       toyBoxJam3b_138: -1717906575
+      toyBoxJam3b_139: 1254224098
       toyBoxJam3b_14: 639446861
+      toyBoxJam3b_140: -41284530
+      toyBoxJam3b_141: -1278248850
+      toyBoxJam3b_142: 1176620146
       toyBoxJam3b_15: 37744165
       toyBoxJam3b_16: 697159032
       toyBoxJam3b_17: 873643237
@@ -3154,8 +3247,6 @@ TextureImporter:
       toyBoxJam3b_51: 245571916
       toyBoxJam3b_52: 1544655294
       toyBoxJam3b_53: -1986683030
-      toyBoxJam3b_54: -1252974312
-      toyBoxJam3b_55: 787817101
       toyBoxJam3b_56: 703392719
       toyBoxJam3b_57: -988179281
       toyBoxJam3b_58: -1897721666
@@ -3185,9 +3276,6 @@ TextureImporter:
       toyBoxJam3b_8: -1618190773
       toyBoxJam3b_80: 390632898
       toyBoxJam3b_81: 164624653
-      toyBoxJam3b_82: 1580980961
-      toyBoxJam3b_83: -333150529
-      toyBoxJam3b_84: 1049469676
       toyBoxJam3b_85: 439093430
       toyBoxJam3b_86: -1851528951
       toyBoxJam3b_87: 272171456

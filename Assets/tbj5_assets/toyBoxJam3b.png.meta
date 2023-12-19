@@ -976,7 +976,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toyBoxJam3b_40
+      name: Dragon_1
       rect:
         serializedVersion: 2
         x: 0
@@ -997,7 +997,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toyBoxJam3b_41
+      name: Dragon_2
       rect:
         serializedVersion: 2
         x: 16
@@ -1018,7 +1018,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toyBoxJam3b_42
+      name: Dragon_3
       rect:
         serializedVersion: 2
         x: 32
@@ -1039,7 +1039,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toyBoxJam3b_43
+      name: Dragon_4
       rect:
         serializedVersion: 2
         x: 48
@@ -1060,7 +1060,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toyBoxJam3b_44
+      name: Dragon_5
       rect:
         serializedVersion: 2
         x: 64
@@ -1081,7 +1081,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toyBoxJam3b_45
+      name: Dragon_6
       rect:
         serializedVersion: 2
         x: 80
@@ -1102,7 +1102,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toyBoxJam3b_46
+      name: Dragon_7
       rect:
         serializedVersion: 2
         x: 96
@@ -1123,7 +1123,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toyBoxJam3b_47
+      name: Dragon_9
       rect:
         serializedVersion: 2
         x: 112
@@ -1921,7 +1921,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toyBoxJam3b_85
+      name: Dragon_8
       rect:
         serializedVersion: 2
         x: 112
@@ -3149,6 +3149,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Dragon_1: 1630709388
+      Dragon_2: -1179353752
+      Dragon_3: 1784101177
+      Dragon_4: 1603792203
+      Dragon_5: 1050301267
+      Dragon_6: -630822481
+      Dragon_7: 118877424
+      Dragon_8: 439093430
+      Dragon_9: -1844553184
       cloud1: 1049469676
       cloud2: -1252974312
       cloud3: 1580980961
@@ -3232,14 +3241,6 @@ TextureImporter:
       toyBoxJam3b_38: -1506748939
       toyBoxJam3b_39: 1151086821
       toyBoxJam3b_4: -1842083455
-      toyBoxJam3b_40: 1630709388
-      toyBoxJam3b_41: -1179353752
-      toyBoxJam3b_42: 1784101177
-      toyBoxJam3b_43: 1603792203
-      toyBoxJam3b_44: 1050301267
-      toyBoxJam3b_45: -630822481
-      toyBoxJam3b_46: 118877424
-      toyBoxJam3b_47: -1844553184
       toyBoxJam3b_48: -1937890682
       toyBoxJam3b_49: -829658975
       toyBoxJam3b_5: -2092673632
@@ -3276,7 +3277,6 @@ TextureImporter:
       toyBoxJam3b_8: -1618190773
       toyBoxJam3b_80: 390632898
       toyBoxJam3b_81: 164624653
-      toyBoxJam3b_85: 439093430
       toyBoxJam3b_86: -1851528951
       toyBoxJam3b_87: 272171456
       toyBoxJam3b_88: 1904666505

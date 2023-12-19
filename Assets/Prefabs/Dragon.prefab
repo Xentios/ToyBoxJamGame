@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2121322656025796345}
   - component: {fileID: 233219239898211847}
   - component: {fileID: 2492839041155781978}
-  - component: {fileID: 2122985974786611849}
   - component: {fileID: 3711421337022456270}
+  - component: {fileID: 2991078802655630491}
   m_Layer: 0
   m_Name: Dragon
   m_TagString: Untagged
@@ -77,6 +77,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
+  upSpeed: 3
+  downSpeed: 100
   dragonPivot: {fileID: 2765161766851177503}
   actionsAsset: {fileID: -944628639613478452, guid: 4d07492b1deb38f4c9b491e8cae4842f, type: 3}
   inputFlyUp: {fileID: 5724292910868333600, guid: 4d07492b1deb38f4c9b491e8cae4842f, type: 3}
@@ -95,16 +97,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc9932efd7ee6be4c888120f89228fa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragonMovement:
-    m_Name: Dragon Movement
-    m_Id: f1236206-ab91-40a2-ba47-7d5ddf312fc8
-    m_Asset: {fileID: 0}
-    m_Actions: []
-    m_Bindings: []
+  dragonMovement: {fileID: -944628639613478452, guid: 4d07492b1deb38f4c9b491e8cae4842f, type: 3}
   animator: {fileID: 2770156484947361870}
-  col2D: {fileID: 2122985974786611849}
---- !u!61 &2122985974786611849
-BoxCollider2D:
+  col2D: {fileID: 2991078802655630491}
+--- !u!114 &3711421337022456270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6718229776359553025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb5cc0d0ee98664f98cf92fdbbe75da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &2991078802655630491
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -135,31 +144,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0.011590958}
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
-  m_EdgeRadius: 0
---- !u!114 &3711421337022456270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6718229776359553025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fb5cc0d0ee98664f98cf92fdbbe75da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Radius: 0.99839735
 --- !u!1 &8073274681229000350
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,6 +159,7 @@ GameObject:
   - component: {fileID: 7898882254543294316}
   - component: {fileID: 2770156484947361870}
   - component: {fileID: 8589597037820074650}
+  - component: {fileID: 1025275619224899173}
   m_Layer: 0
   m_Name: Dragon Image
   m_TagString: Untagged
@@ -298,3 +286,15 @@ MonoBehaviour:
   canvelEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1025275619224899173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8073274681229000350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d602baf8d0b4a48a7d8ceb0e4d8c62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

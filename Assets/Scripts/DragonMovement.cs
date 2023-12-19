@@ -28,6 +28,9 @@ public class DragonMovement : MonoBehaviour
 
     [SerializeField , AutoHook]
     private Rigidbody2D rb2d;
+
+    [SerializeField, AutoHook(AutoHookSearchArea.DirectChildrenOnly)]
+    private Animator animator;
     private void OnEnable()
     {
         actionsAsset.Enable();
@@ -57,11 +60,12 @@ public class DragonMovement : MonoBehaviour
                // dragonPivot.rotation = Quaternion.Lerp(dragonPivot.rotation, Quaternion.identity, 0.5f);
                 timer = 0;
             }
-           
+
             //PixelRotate p = dragonPivot.GetChild(0).GetComponent<PixelRotate>();
-            //p.SetRotate(rotation.z - 5);
+
+            
         }
-        
+        animator.SetFloat("Velocity", rb2d.velocity.sqrMagnitude);
     }
 
     private void PressUp(InputAction.CallbackContext callbackContext )
@@ -84,5 +88,11 @@ public class DragonMovement : MonoBehaviour
     private void PressRight(InputAction.CallbackContext callbackContext)
     {
         rb2d.AddForce(Vector2.right* speed);
+    }
+
+
+    private void SetAudio(float value)
+    {
+        Mathf.Clamp(value, 0.5f, 1.2f);
     }
 }

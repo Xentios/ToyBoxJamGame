@@ -49,15 +49,14 @@ public class CloudGenerator : MonoBehaviour
     {
         if(cloudPoolActive.Count < cloud_count - 5)
         {
-            foreach (var passiveCloud in cloudPoolPassive)
+            if (cloudPoolPassive.Count > 0)            
             {
+                var passiveCloud = cloudPoolPassive[Random.Range(0, cloudPoolPassive.Count)];
                 Vector2 randomPositionOnScreen=Camera.main.ViewportToWorldPoint(new Vector2(1+Random.Range(0,0.1f), 0));
                 passiveCloud.transform.position = new Vector3(randomPositionOnScreen.x, Random.Range(22f, 27f), 0);
                 passiveCloud.gameObject.SetActive(true);
                 cloudPoolPassive.Remove(passiveCloud);
-                cloudPoolActive.Add(passiveCloud);
-
-                if(cloudPoolActive.Count>cloud_count-5)   break;
+                cloudPoolActive.Add(passiveCloud);               
             }
         }
     }

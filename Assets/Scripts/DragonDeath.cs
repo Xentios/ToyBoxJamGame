@@ -63,6 +63,14 @@ public class DragonDeath : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Coin")) return;
+
+        animator.SetTrigger("Death");
+        col2D.attachedRigidbody.gravityScale = 1f;
+    }
+
     public void AnimationEnding()
     {
         col2D.offset = Vector2.up/2;

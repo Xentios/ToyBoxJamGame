@@ -7,7 +7,13 @@ public class GroundGenerator : MonoBehaviour
 {
 
     [SerializeField]
-    private Tilemap tileMap;
+    private Tilemap ground_1;
+
+    [SerializeField]
+    private Tilemap ground_2;
+
+    [SerializeField]
+    private Tilemap ground_3;
 
     [SerializeField]
     private RuleTile topGrassyTiles;
@@ -22,23 +28,23 @@ public class GroundGenerator : MonoBehaviour
     {
         //bottomRockyTiles.GetType();
         GetRandomTileFromRuleTile();
-        Vector3Int endOfTileMap = tileMap.origin + tileMap.size;
-        endOfTileMap.y -= tileMap.size.y;
+        //Vector3Int endOfTileMap = tileMap.origin + tileMap.size;
+        //endOfTileMap.y -= tileMap.size.y;
         //endOfTileMap = Vector3Int.zero;
-        SetPreview(endOfTileMap);
+        SetPreview(Vector3Int.zero);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 topRight = tileMap.origin + tileMap.size;
-        var result=Camera.main.WorldToViewportPoint(topRight);
-        if (result.x < 2)
-        {
-            GetRandomTileFromRuleTile();
-            //RandomWalkTopSmoothed()
+        //Vector3 topRight = tileMap.origin + tileMap.size;
+        //var result=Camera.main.WorldToViewportPoint(topRight);
+        //if (result.x < 2)
+        //{
+        //    GetRandomTileFromRuleTile();
+        //    //RandomWalkTopSmoothed()
 
-        }
+        //}
 
 
     }
@@ -114,10 +120,17 @@ public class GroundGenerator : MonoBehaviour
 
         Vector3Int minPos = new Vector3Int(-555, -555, 0);
         Vector3Int maxPos = new Vector3Int(4, 4, 0);
-       // tileMap.InsertCells(location, new Vector3Int(100, 6, 0));
+        // tileMap.InsertCells(location, new Vector3Int(100, 6, 0));
         //tileMap.SetTile(minPos, test);
         //tileMap.SetTile(maxPos, test);
         //tileMap.BoxFill(new Vector3Int(0, 0, 0), test, -555, -555, 4, 4);
+
+        ground_1.BoxFill(ground_1.origin, null, 1, 1, 3, 3);
+        ground_1.SetTile(ground_1.origin+Vector3Int.right,null);
+        ground_2.BoxFill(ground_2.origin, null, 1, 1, 3, 3);
+        ground_2.SetTile(ground_3.origin + Vector3Int.right, null);
+        ground_3.BoxFill(ground_3.origin, null, 1, 1, 3, 3);
+        ground_3.SetTile(ground_3.origin + Vector3Int.right, null);
 
         var copy = location;
         var endx = 100;
@@ -131,10 +144,10 @@ public class GroundGenerator : MonoBehaviour
         //BoundsInt b = new BoundsInt(location,Vector3Int.one*100);
         //tileMap.SetTilesBlock(b, test);
         // tileMap.BoxFill(location, test, 0, 0, 100, 6);
-        tileMap.SetTile(copy, test);
-        tileMap.ResizeBounds();
-        tileMap.BoxFill(location, test, 0,0,endx,endy);
-        tileMap.BoxFill(copy, test, -1000, -6, endx, endy);
+        //tileMap.SetTile(copy, test);
+        //tileMap.ResizeBounds();
+        //tileMap.BoxFill(location, test, 0,0,endx,endy);
+        //tileMap.BoxFill(copy, test, -1000, -6, endx, endy);
 
         //tileMap.CompressBounds();  
         //tileMap.RefreshAllTiles();

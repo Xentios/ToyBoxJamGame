@@ -76,15 +76,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ac3f921f397f345b9a0a9b9c1176a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  forwardSpeed: 10
   upSpeed: 3
   downSpeed: 100
+  maxSpeed: 30
   dragonPivot: {fileID: 2765161766851177503}
   actionsAsset: {fileID: -944628639613478452, guid: 4d07492b1deb38f4c9b491e8cae4842f, type: 3}
   inputFlyUp: {fileID: 5724292910868333600, guid: 4d07492b1deb38f4c9b491e8cae4842f, type: 3}
   inputFlyDown: {fileID: -1943171528651211305, guid: 4d07492b1deb38f4c9b491e8cae4842f, type: 3}
   inputMoveRight: {fileID: 6016964051858699198, guid: 4d07492b1deb38f4c9b491e8cae4842f, type: 3}
   rb2d: {fileID: 2121322656025796345}
+  animator: {fileID: 2770156484947361870}
 --- !u!114 &2492839041155781978
 MonoBehaviour:
   m_ObjectHideFlags: 0

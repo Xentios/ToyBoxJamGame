@@ -13,37 +13,21 @@ public class DragonDeath : MonoBehaviour
     [SerializeField, AutoHook]
     private Collider2D col2D;
     [SerializeField, AutoHook]
-    private AudioSource audioSource;
+    private AudioSource wingSound;
 
     [SerializeField]
     private AudioClip hitSound;
 
     [SerializeField]
+    private List<AudioClip> softHitSounds;
+
+    [SerializeField]
     private AudioSource deathSound;
 
-
     private bool IsDead;
-    private void OnCollisionEnter2D2(Collision2D collision)
-    {
-        Debugger.Log("Collision sqrMagnitude is: " + collision.relativeVelocity.sqrMagnitude, Debugger.PriorityLevel.High);
-        ContactPoint2D[] contacts = new ContactPoint2D[collision.contactCount];
-        var contactsNumber=collision.GetContacts(contacts);
-        Debugger.Log("Collision contactsNumber is : " + contactsNumber, Debugger.PriorityLevel.Medium);
-        float sum = 0;
-        for (int i = 0; i < contactsNumber; i++)
-        {
-            var contact=collision.GetContact(i);
-            Debugger.Log("Contact "+i+" is " + contact.normalImpulse, Debugger.PriorityLevel.Low);
-            sum += contact.normalImpulse;
-        }
 
-        if (sum< 15) return;
-        Debugger.Log("Death Collision sqrMagnitude is: " + collision.relativeVelocity.sqrMagnitude,Debugger.PriorityLevel.MustShown);
-        animator.SetTrigger("Death");
-        col2D.attachedRigidbody.gravityScale = 1f;
-        audioSource.volume = 0;
-    }
-
+    private int hitSoundLooper;
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (IsDead == false)
@@ -51,30 +35,19 @@ public class DragonDeath : MonoBehaviour
             Vector2 relativeVelocity = collision.relativeVelocity;
             Vector2 collisionNormal = collision.GetContact(0).normal;
 
-
             float dotProduct = Vector2.Dot(relativeVelocity, collisionNormal);
-
-
             float headOnThreshold = (collision.gameObject.layer == LayerMask.NameToLayer("Ground")) ? 7f : 4f;
-
-            Debug.Log(headOnThreshold);
-            // Check if the dot product is below the threshold
-            if (dotProduct < headOnThreshold)
-            {
-
-            }
-            else
-            {
-                animator.SetTrigger("Death");
-                col2D.attachedRigidbody.gravityScale = 1f;
-                deathSound.Play();
-
+                       
+            if (dotProduct > headOnThreshold)
+            {            
+                Dying();
             }
         }
         else
-        {
-            audioSource.PlayOneShot(hitSound);
-            audioSource.PlayOneShot(hitSound);
+        {           
+            deathSound.PlayOneShot(softHitSounds[hitSoundLooper]);
+            hitSoundLooper++;
+            hitSoundLooper %= softHitSounds.Count;
         }
        
     }
@@ -83,13 +56,23 @@ public class DragonDeath : MonoBehaviour
     {
         if (collision.CompareTag("Coin")) return;
 
+        Dying();
+    }
+
+    private void Dying()
+    {
+        if (IsDead == true) return;
+
+        IsDead = true;
+        wingSound.volume = 0;
         animator.SetTrigger("Death");
         col2D.attachedRigidbody.gravityScale = 1f;
+        deathSound.Play();
     }
 
     public void AnimationEnding()
     {
-        IsDead = true;
+       
         col2D.offset = Vector2.up/2;
         col2D.attachedRigidbody.gravityScale = 2f;
         dragonMovement.FindActionMap("Dragon Movement")?.Disable();

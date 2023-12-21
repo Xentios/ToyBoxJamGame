@@ -1480,7 +1480,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toyBoxJam3b_64
+      name: egg_0
       rect:
         serializedVersion: 2
         x: 0
@@ -1501,7 +1501,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toyBoxJam3b_65
+      name: egg_1
       rect:
         serializedVersion: 2
         x: 8
@@ -1522,7 +1522,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toyBoxJam3b_66
+      name: egg_2
       rect:
         serializedVersion: 2
         x: 16
@@ -1543,7 +1543,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toyBoxJam3b_67
+      name: egg_3
       rect:
         serializedVersion: 2
         x: 24
@@ -1564,7 +1564,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toyBoxJam3b_68
+      name: egg_4
       rect:
         serializedVersion: 2
         x: 32
@@ -3163,6 +3163,11 @@ TextureImporter:
       cloud3: 1580980961
       cloud4: -333150529
       cloud5: 787817101
+      egg_0: -457972048
+      egg_1: 1987237366
+      egg_2: -268636809
+      egg_3: -1285622381
+      egg_4: -503717294
       toyBoxJam3b_0: -385604560
       toyBoxJam3b_1: 43793413
       toyBoxJam3b_10: -734319563
@@ -3257,11 +3262,6 @@ TextureImporter:
       toyBoxJam3b_61: -757223556
       toyBoxJam3b_62: 1040716498
       toyBoxJam3b_63: 963214503
-      toyBoxJam3b_64: -457972048
-      toyBoxJam3b_65: 1987237366
-      toyBoxJam3b_66: -268636809
-      toyBoxJam3b_67: -1285622381
-      toyBoxJam3b_68: -503717294
       toyBoxJam3b_69: 31102157
       toyBoxJam3b_7: -1135191093
       toyBoxJam3b_70: -1624232334

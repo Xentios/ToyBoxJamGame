@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TNRD.Autohook;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using DG.Tweening;
 
 public class DragonDeath : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class DragonDeath : MonoBehaviour
     private InputActionAsset dragonMovement;
     [SerializeField, AutoHook(AutoHookSearchArea.DirectChildrenOnly)]
     private Animator animator;
+    [SerializeField, AutoHook(AutoHookSearchArea.DirectChildrenOnly)]
+    private SpriteRenderer dragonModel;
     [SerializeField, AutoHook]
     private Collider2D col2D;
     [SerializeField, AutoHook]
@@ -57,6 +60,11 @@ public class DragonDeath : MonoBehaviour
         if (collision.CompareTag("Coin")) return;
 
         Dying();
+        DOVirtual.Color(Color.yellow, Color.red, 2, (value) =>
+        {
+            dragonModel.color = value;
+        }).SetEase(Ease.InExpo);
+       
     }
 
     private void Dying()

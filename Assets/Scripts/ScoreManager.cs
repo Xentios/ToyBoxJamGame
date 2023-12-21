@@ -21,7 +21,13 @@ public class ScoreManager : MonoBehaviour
 
     public void RefreshScore()
     {
-        var result=score.Value.ToString("0000");
+        string format = "";
+        foreach (var item in canvasScoreCanvas)
+        {
+            format += "0";
+        }
+
+        var result=score.Value.ToString(format);
         var charArray = result.ToCharArray();
         for (int i = 0; i < canvasScoreCanvas.Count; i++)
         {            

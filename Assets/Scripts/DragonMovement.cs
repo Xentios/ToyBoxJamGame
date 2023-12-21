@@ -65,14 +65,20 @@ public class DragonMovement : MonoBehaviour
         actionsAsset.Disable();
     }
 
-    private float timer;
+
     private void Update()
     {
-        animator.SetBool("Diving", PressingDown);
+        animator.SetBool("Diving", PressingDown == true && PressingUp == false);
         if (PressingDown==true&& PressingUp == false)
         {
             rb2d.AddRelativeForce(Vector2.down * downSpeed*Time.deltaTime);
             rb2d.AddRelativeForce(Vector2.left * (forwardSpeed/2f) * Time.deltaTime);
+            audioSource.enabled = false;
+           
+        }
+        else
+        {
+            audioSource.enabled = true;
         }
 
         if (PressingUp==true)
@@ -85,20 +91,7 @@ public class DragonMovement : MonoBehaviour
             rb2d.AddRelativeForce(Vector2.right * forwardSpeed * Time.deltaTime);
         }
 
-        if (dragonPivot.rotation != Quaternion.identity)
-        {
-            timer += Time.deltaTime;
-
-            if (timer > 1f)
-            {
-               // dragonPivot.rotation = Quaternion.Lerp(dragonPivot.rotation, Quaternion.identity, 0.5f);
-                timer = 0;
-            }
-
-            //PixelRotate p = dragonPivot.GetChild(0).GetComponent<PixelRotate>();
-
-            
-        }
+       
         animator.SetFloat("Velocity", rb2d.velocity.sqrMagnitude);
         SetAudio(rb2d.velocity.sqrMagnitude);
     }

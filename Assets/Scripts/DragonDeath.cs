@@ -27,10 +27,15 @@ public class DragonDeath : MonoBehaviour
     [SerializeField]
     private AudioSource deathSound;
 
+
+    [SerializeField]
+    private AnimationCurve colorChangeAnimCurve;
+
     private bool IsDead;
 
     private int hitSoundLooper;
-    
+
+    private float death_timer;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (IsDead == false)
@@ -73,7 +78,8 @@ public class DragonDeath : MonoBehaviour
 
         IsDead = true;
         wingSound.volume = 0;
-        animator.SetTrigger("Death");
+        //animator.SetBool("Death",true);
+        animator.SetLayerWeight(1, 1);
         col2D.attachedRigidbody.gravityScale = 1f;
         deathSound.Play();
     }
@@ -84,7 +90,25 @@ public class DragonDeath : MonoBehaviour
         col2D.offset = Vector2.up/2;
         col2D.attachedRigidbody.gravityScale = 2f;
         dragonMovement.FindActionMap("Dragon Movement")?.Disable();
-        deathSound.clip = null;
-       
+        deathSound.Stop();
+        death_timer = 0f;
+        StartCoroutine(Reborn());
+    }
+
+    IEnumerator Reborn()
+    {
+        
+        DOVirtual.Color(Color.red, Color.yellow, 2f, (value) =>
+        {
+            dragonModel.color = value;
+        }).SetEase(colorChangeAnimCurve).SetDelay(2f);
+        yield return new WaitForSeconds(4f);
+        col2D.offset = Vector2.zero;
+        IsDead = false;
+        //animator.SetBool("Death",false);
+        animator.SetLayerWeight(1, 0);
+        col2D.attachedRigidbody.gravityScale = 0.3f;
+        wingSound.volume = 1f;
+        dragonMovement.FindActionMap("Dragon Movement")?.Enable();
     }
 }

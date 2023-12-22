@@ -78,8 +78,8 @@ public class DragonDeath : MonoBehaviour
 
         IsDead = true;
         wingSound.volume = 0;
-        //animator.SetBool("Death",true);
-        animator.SetLayerWeight(1, 1);
+        animator.SetBool("Death",true);
+        //animator.SetLayerWeight(1, 1);
         col2D.attachedRigidbody.gravityScale = 1f;
         deathSound.Play();
     }
@@ -103,10 +103,18 @@ public class DragonDeath : MonoBehaviour
             dragonModel.color = value;
         }).SetEase(colorChangeAnimCurve).SetDelay(2f);
         yield return new WaitForSeconds(4f);
+        int failsafe = 0;
+        while (col2D.attachedRigidbody.velocity.sqrMagnitude>1f && failsafe<5)
+        {
+            yield return new WaitForSeconds(1f);
+            failsafe++;
+        }
+        
         col2D.offset = Vector2.zero;
         IsDead = false;
-        //animator.SetBool("Death",false);
-        animator.SetLayerWeight(1, 0);
+        animator.SetBool("Death",false);
+        //animator.SetLayerWeight(1, 0);     
+
         col2D.attachedRigidbody.gravityScale = 0.3f;
         wingSound.volume = 1f;
         dragonMovement.FindActionMap("Dragon Movement")?.Enable();

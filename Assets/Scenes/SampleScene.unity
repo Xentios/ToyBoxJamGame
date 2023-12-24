@@ -40270,7 +40270,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "uN\u0131ty \u0131s just jank at th\u0131s po\u0131nt"
+  m_text: "What do you think about Un\u0131ty?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 84277ddfed48eda4d89510562b669f95, type: 2}
   m_sharedMaterial: {fileID: -3427088993512784561, guid: 84277ddfed48eda4d89510562b669f95, type: 2}
@@ -89654,6 +89654,10 @@ PrefabInstance:
     - target: {fileID: 3578521406186036909, guid: b4df3a7cdfda911439ab4a804f6694ad, type: 3}
       propertyPath: m_Name
       value: Egg
+      objectReference: {fileID: 0}
+    - target: {fileID: 3578521406186036909, guid: b4df3a7cdfda911439ab4a804f6694ad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7990613705984432925, guid: b4df3a7cdfda911439ab4a804f6694ad, type: 3}
       propertyPath: m_LocalPosition.x

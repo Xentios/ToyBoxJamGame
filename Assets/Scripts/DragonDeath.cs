@@ -62,7 +62,9 @@ public class DragonDeath : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (collision.CompareTag("Coin")) return;
+        if (collision.CompareTag("TimeRefresh")) return;
 
         Dying();
         DOVirtual.Color(Color.yellow, Color.red, 2, (value) =>

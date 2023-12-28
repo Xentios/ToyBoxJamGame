@@ -8,8 +8,15 @@ using UnityEngine;
 
 public class PlayFabLogin:MonoBehaviour
 {
-    [SerializeField]
+    const string FakeId= "4A78C25C8148E120";
+
+    public string CurrentPlayerId;
+
+     [SerializeField]
     public GameEvent connected;
+
+    [SerializeField]
+    private FloatVariable HighScore;
 
     public static string DeviceUniqueIdentifier
     {
@@ -19,7 +26,7 @@ public class PlayFabLogin:MonoBehaviour
 
 
 #if UNITY_EDITOR
-            deviceId = SystemInfo.deviceUniqueIdentifier + "-editor";
+            deviceId = SystemInfo.deviceUniqueIdentifier + "-editor5";
 #elif UNITY_ANDROID
                     AndroidJavaClass up = new AndroidJavaClass ("com.unity3d.player.UnityPlayer");
                     AndroidJavaObject currentActivity = up.GetStatic<AndroidJavaObject> ("currentActivity");
@@ -52,32 +59,45 @@ public class PlayFabLogin:MonoBehaviour
       
     }
 
-    void CreatePlayerAndUpdateDisplayName()
-    {
-        PlayFabClientAPI.LoginWithCustomID(new LoginWithCustomIDRequest
-        {
-            CustomId = "PlayFabGetPlayerProfileCustomId",
-            CreateAccount = true
-        }, result => {
-            Debug.Log("Successfully logged in a player with PlayFabId: " + result.PlayFabId);
-            UpdateDisplayName();
-        }, error => Debug.LogError(error.GenerateErrorReport()));
-    }
+    //void CreatePlayerAndUpdateDisplayName()
+    //{
+    //    PlayFabClientAPI.LoginWithCustomID(new LoginWithCustomIDRequest
+    //    {
+    //        CustomId = "PlayFabGetPlayerProfileCustomId",
+    //        CreateAccount = true
+    //    }, result => {
+    //        Debug.Log("Successfully logged in a player with PlayFabId: " + result.PlayFabId);
+    //        UpdateDisplayName();
+    //    }, error => Debug.LogError(error.GenerateErrorReport()));
+    //}
 
     void UpdateDisplayName()
     {
         PlayFabClientAPI.UpdateUserTitleDisplayName(new UpdateUserTitleDisplayNameRequest
         {
-            DisplayName = "Xentios"
-        }, result => {
+            DisplayName = "Anonymous" + UnityEngine.Random.Range(0, 10000)
+        }, result =>
+        {
             Debug.Log("The player's display name is now: " + result.DisplayName);
-        }, error => Debug.LogError(error.GenerateErrorReport()));
+            if (!PlayerPrefs.HasKey("DisplayName"))
+                PlayerPrefs.SetString("DisplayName", result.DisplayName);
+        }, error => Debug.LogError(error.GenerateErrorReport())); ;
     }
 
     private void OnLoginSuccess(LoginResult result)
     {
         Debug.Log("Congratulations, you made your first successful API call!");
-        UpdateDisplayName();
+        if (result.NewlyCreated)
+        {
+            UpdateDisplayName();
+        }
+        else
+        {
+            GetStatistics();
+        }
+        CurrentPlayerId = result.PlayFabId;
+        GetStatisticsOfCurrentPlayer();
+        GetStatisticsOfLastOne();
         connected.TriggerEvent();
     }
 
@@ -93,6 +113,12 @@ public class PlayFabLogin:MonoBehaviour
     public void SaveFakeScore()
     {
         SubmitScore(UnityEngine.Random.Range(1, 1000));
+    }
+
+    [ContextMenu("Save Score SaveFakeScoreNegative")]
+    public void SaveFakeScoreNegative()
+    {
+        SubmitScore(-1);
     }
 
     public void SubmitScore(int playerScore)
@@ -147,4 +173,75 @@ public class PlayFabLogin:MonoBehaviour
     //    Debug.LogWarning("Something went wrong with your API call. Here's some debug information:");
     //    Debug.LogError(error.GenerateErrorReport());
     //}
+
+    void GetStatistics()
+    {
+        PlayFabClientAPI.GetPlayerStatistics(
+            new GetPlayerStatisticsRequest(),
+            OnGetStatistics,
+            error => Debug.LogError(error.GenerateErrorReport())
+        );
+    }
+
+    void GetStatisticsOfLastOne()
+    {
+        //var y=new GetFriendLeaderboardAroundPlayerRequest().;
+
+        PlayFabClientAPI.GetFriendLeaderboardAroundPlayer(new GetFriendLeaderboardAroundPlayerRequest
+        {
+            StatisticName = "High Scores",
+            PlayFabId= FakeId,           
+            MaxResultsCount = 10
+        }, result => DisplayLastGuy(result), FailureCallback); ;
+    }
+
+    void GetStatisticsOfCurrentPlayer()
+    {
+       
+        PlayFabClientAPI.GetLeaderboardAroundPlayer(new GetLeaderboardAroundPlayerRequest
+        {
+            StatisticName = "High Scores",
+            MaxResultsCount = 1
+        }, result => DisplayMyStats(result), FailureCallback); ;
+    }
+
+    void DisplayMyStats(GetLeaderboardAroundPlayerResult result)
+    {
+        foreach (var item in result.Leaderboard)
+        {
+            Debug.Log("My  position " + (item.Position+1));
+            Debug.Log("My name " + item.DisplayName);
+            Debug.Log("My score " + item.StatValue);
+        }
+
+    }
+
+
+
+    void DisplayLastGuy(GetFriendLeaderboardAroundPlayerResult result)
+    {
+        
+
+        foreach (var item in result.Leaderboard)
+        {
+            
+            Debug.Log("Last guys position "+item.Position);
+            Debug.Log("Last guys name " + item.DisplayName);
+            Debug.Log("Last guys score " + item.StatValue);
+        }
+    }
+
+    void OnGetStatistics(GetPlayerStatisticsResult result)
+    {
+        Debug.Log("Received the following Statistics:");        
+        foreach (var eachStat in result.Statistics)
+        {
+            if(eachStat.StatisticName=="High Scores")
+            {
+                HighScore.Value = eachStat.Value;                
+            }            
+            Debug.Log("Statistic (" + eachStat.StatisticName + "): " + eachStat.Value);
+        }
+           
+    }
 }

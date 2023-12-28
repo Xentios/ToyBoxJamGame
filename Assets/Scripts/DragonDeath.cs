@@ -65,6 +65,7 @@ public class DragonDeath : MonoBehaviour
         
         if (collision.CompareTag("Coin")) return;
         if (collision.CompareTag("TimeRefresh")) return;
+        if (collision.CompareTag("Ending")) return;
 
         Dying();
         DOVirtual.Color(Color.yellow, Color.red, 2, (value) =>

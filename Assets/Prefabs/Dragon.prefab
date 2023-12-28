@@ -87,6 +87,7 @@ MonoBehaviour:
   inputMoveRight: {fileID: 6016964051858699198, guid: 4d07492b1deb38f4c9b491e8cae4842f, type: 3}
   rb2d: {fileID: 2121322656025796345}
   animator: {fileID: 2770156484947361870}
+  audioSource: {fileID: 0}
 --- !u!114 &2492839041155781978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,7 +102,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragonMovement: {fileID: -944628639613478452, guid: 4d07492b1deb38f4c9b491e8cae4842f, type: 3}
   animator: {fileID: 2770156484947361870}
+  dragonModel: {fileID: 7898882254543294316}
   col2D: {fileID: 2991078802655630491}
+  wingSound: {fileID: 0}
+  hitSound: {fileID: 0}
+  softHitSounds: []
+  deathSound: {fileID: 0}
+  colorChangeAnimCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &3711421337022456270
 MonoBehaviour:
   m_ObjectHideFlags: 0

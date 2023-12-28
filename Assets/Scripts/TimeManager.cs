@@ -8,6 +8,9 @@ public class TimeManager : MonoBehaviour
     private GameEvent gameEventTimeChanged;
 
     [SerializeField]
+    private GameEvent gameOverEvent;
+
+    [SerializeField]
     private FloatVariable timeLeft;
 
 
@@ -23,6 +26,6 @@ public class TimeManager : MonoBehaviour
             gameEventTimeChanged.TriggerEvent();
         }
 
-
+        gameOverEvent.TriggerEvent();
     }
 }

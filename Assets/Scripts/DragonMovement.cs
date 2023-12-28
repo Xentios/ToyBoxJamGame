@@ -56,6 +56,7 @@ public class DragonMovement : MonoBehaviour
 
     private void OnDisable()
     {
+        rb2d.velocity = Vector2.zero;
         inputFlyUp.action.started -= PressUp;
         inputFlyUp.action.canceled -= PressUpCancel;
         inputFlyDown.action.started -= PressDown;
